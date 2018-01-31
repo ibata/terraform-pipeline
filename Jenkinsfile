@@ -2,10 +2,12 @@
 
 node {
     // Setup the AWS Credentials
-    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.AWS_CREDENTIALS}",
-                     usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-        env.AWS_ACCESS_KEY_ID = "$USERNAME"
-        env.AWS_SECRET_ACCESS_KEY = "$PASSWORD"
+    withCredentials([[
+    $class: "AmazonWebServicesCredentialsBinding",
+    accessKeyVariable: "AKIAJWXP3F57JSSFK4HA",
+    credentialsId: "47536ade-f5cb-4a94-b5ab-3437ba578de5",
+    secretKeyVariable: "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"]]) {
+      // ACCESS AWS ENVIRONMENT VARIABLES HERE!
     }
   
    stage 'checkout'
