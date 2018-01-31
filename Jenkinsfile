@@ -22,4 +22,15 @@ node {
             type: "boolean")
 
         sh "bin/terraform apply plan.tfplan"
+   
+   stage name: 'integration testing', concurrency: 1
+        sh "test -f bin/terraform"
+   
+   stage name: 'destroy', concurrency: 1
+        def deploy_validation = input(
+            id: 'destroy',
+            message: 'destroy environment',
+            type: "boolean")
+
+        sh "bin/terraform destroy plan.tfplan"
 }
