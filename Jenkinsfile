@@ -1,13 +1,13 @@
-#!groovy​
-
-// Setup the AWS Credentials
-withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.AWS_CREDENTIALS}",
-                 usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-    env.AWS_ACCESS_KEY_ID = "$USERNAME"
-    env.AWS_SECRET_ACCESS_KEY = "$PASSWORD"
-}
+#!groovy
 
 node {
+    // Setup the AWS Credentials
+    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.AWS_CREDENTIALS}",
+                     usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+        env.AWS_ACCESS_KEY_ID = "$USERNAME"
+        env.AWS_SECRET_ACCESS_KEY = "$PASSWORD"
+    }
+  
    stage 'checkout'
         checkout scm
 
