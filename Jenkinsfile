@@ -24,7 +24,7 @@ node {
         echo "packer build project.json"
 
    stage name: 'plan', concurrency: 1
-        sh "bin/terraform plan --out plan.tfplan terraform/"
+        sh "bin/terraform plan -var-file=demo.tfvars  --out plan.tfplan terraform/"
 
    stage name: 'apply', concurrency: 1
         def deploy_validation = input(
@@ -43,5 +43,5 @@ node {
             message: 'destroy environment',
             type: "boolean")
 
-        sh "bin/terraform destroy plan.tfplan"
+        sh "bin/terraform destroy -var-file=demo.tfvars  plan.tfplan"
 }
