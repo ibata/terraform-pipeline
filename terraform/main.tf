@@ -1,4 +1,10 @@
-# Configure the AWS Provider
+# AWS configuration
+provider "aws" {
+  access_key = "${length(var.aws["access_key"]) > 1 ? var.aws["access_key"] : ""}"
+  profile    = "${length(var.aws["profile"]) > 1 ? var.aws["profile"] : ""}"
+  secret_key = "${length(var.aws["secret_key"]) > 1 ? var.aws["secret_key"] : ""}"
+  region     = "${length(var.aws["region"]) > 1 ? var.aws["region"] : ""}"
+}
 
 
 variable "vpc_cidr" {
