@@ -4,9 +4,9 @@ node {
     // Setup the AWS Credentials
     withCredentials([[
     $class: "AmazonWebServicesCredentialsBinding",
-    accessKeyVariable: "AKIAJWXP3F57JSSFK4HA",
+    accessKeyVariable: "AWS_ACCESS_KEY_ID",
     credentialsId: "47536ade-f5cb-4a94-b5ab-3437ba578de5",
-    secretKeyVariable: "mm5zBhjdlec59MSWb4ej4fdFeMpOviRSdLu3Sd7C"]]) {
+    secretKeyVariable: "AWS_SECRET_ACCESS_KEY"]]) {
       // ACCESS AWS ENVIRONMENT VARIABLES HERE!
     }
   
