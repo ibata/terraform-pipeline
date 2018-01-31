@@ -8,6 +8,8 @@ node {
     credentialsId: "47536ade-f5cb-4a94-b5ab-3437ba578de5",
     secretKeyVariable: "AWS_SECRET_ACCESS_KEY"]]) {
       // ACCESS AWS ENVIRONMENT VARIABLES HERE!
+      sh 'echo uname=$AWS_ACCESS_KEY_ID'
+      println(env.AWS_ACCESS_KEY_ID)
     }
   
    stage 'checkout'
