@@ -27,7 +27,7 @@ node {
         sh "test -f bin/terraform"
    
    stage name: 'destroy', concurrency: 1
-        def deploy_validation = input(
+        def destroy_validation = input(
             id: 'destroy',
             message: 'destroy environment',
             type: "boolean")
