@@ -43,5 +43,5 @@ node {
             message: 'destroy environment',
             type: "boolean")
 
-        sh "bin/terraform destroy  plan.tfplan"
+        sh "bin/terraform destroy"
 }
