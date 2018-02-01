@@ -1,6 +1,6 @@
 aws = {
-  access_key = ""
+  access_key = "$access_key"
   profile    = ""
   region     = "us-east-1"
-  secret_key = ""
+  secret_key = "$secret_key"
 }
