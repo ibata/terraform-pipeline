@@ -25,12 +25,12 @@ pipeline {
                     ]]) {
 
                             //Templating with Linux in a Shell                         
-                            sh 'sed -e "s/ACCESS_KEY/$AWS_ACCESS_KEY_ID/"   terraform/injectinputs.tfvars'
-                            /*
+                            //sh 'sed -e "s/ACCESS_KEY/$AWS_ACCESS_KEY_ID/"   terraform/injectinputs.tfvars'
+                            
                             sh '''
                                 sed -e "s/ACCESS_KEY/$AWS_ACCESS_KEY_ID/" -e "s,SECRET_ACCESSKEY,$AWS_SECRET_ACCESS_KEY,"  terraform/injectinputs.tfvars
                             '''
-                            */
+                            
 
                            
                     }
